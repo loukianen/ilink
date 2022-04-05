@@ -1,0 +1,111 @@
+header {
+  height: 52px;
+  background-color: #FFFFFF;
+  padding: 32px 80px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.header_avatar {
+  display: flex;
+  align-items: center;
+}
+
+.header_avatar span {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.header_avatar .last-name {
+  margin-left: 5px;
+}
+
+.avatar_img {
+  height: 52px;
+  width: 52px;
+}
+
+.logo {
+  position: absolute;
+  right: calc(50vw - 85.43px / 2);
+  top: 32px;
+  height: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo_ilink {
+  height: 32.19px;
+  width: 85.43px;
+}
+
+.logo_academy {
+  height: 12.38px;
+  width: 85.43px;
+}
+
+.header_menu-button {
+  padding: 17px 28px;
+  height: 52px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.header_menu-button__mobile {
+  display: none;
+}
+
+@media (max-width: 770px) {
+  header {
+    height: 36px;
+    padding: 20px 16px 21px 16px;
+  }
+
+  .header_avatar span {
+    font-size: 12px;
+    line-height: 14px;
+    margin-left: 8px;
+  }
+  
+  .header_avatar .last-name {
+    display: none;
+  }
+  
+  .avatar_img {
+    height: 36px;
+    width: 36px;
+  }
+  
+  .logo {
+    position: absolute;
+    right: calc(50vw - 59.14px / 2);
+    top: 20px;
+    height: 36px;
+  }
+  
+  .logo_ilink {
+    height: 22.29px;
+    width: 59.14px;
+  }
+  
+  .logo_academy {
+    height: 8.57px;
+    width: 59.14px;
+  }
+
+  .header_menu-button {
+    display: none;
+  }
+
+  .header_menu-button__mobile {
+    display: block;
+    height: 36px;
+    width: 36px;
+    background-image: url('./img/batton-backgroung__mobile.png');
+  }
+}
