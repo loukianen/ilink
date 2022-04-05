@@ -17,3 +17,7 @@ button {
   background-color: #585CC6;
   color: #FFFFFF;
 }
+
+.button:hover {
+  background-color: #797DDF;
+}
