@@ -1,0 +1,36 @@
+.main_header {
+  margin: 93px 80px 0 80px;
+  font-family: 'Factor A';
+  font-weight: 500;
+  font-size: 124px;
+  line-height: 148px;
+  letter-spacing: -1.24%;
+  color: #FFFFFF;
+}
+
+.main-info {
+  display: flex;
+  margin: 120px 80px 0 80px;
+}
+
+.main-info_photo {
+  width: 519px;
+  height: 383px;
+}
+
+@media (max-width: 900px) {
+  .main_header {
+    margin: 43px 16px 0 16px;
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .main-info {
+    margin: 64px 0 0 16px;
+  }
+
+  .main-info_photo {
+    width: 304px;
+    height: 200px;
+  }
+}

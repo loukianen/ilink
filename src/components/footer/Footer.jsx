@@ -1,8 +1,10 @@
 import './footer.css';
 
 function Footer() {
-  const handleSocialNetButtonClick = () => {
-    alert('Здесь можно будет поделиться информацией');
+  const handleSocialNetButtonClick = (evt) => {
+    const elementClasses = evt.target.getAttribute('class');
+    const sourceName = elementClasses.split(' ')[0];
+    alert(`Здесь можно будет поделиться информацией в ${sourceName}`);
   };
 
   return (
@@ -12,7 +14,7 @@ function Footer() {
       </div>
       <div className="social-net-icons">
         <div className="twitter social-net-icon" onClick={handleSocialNetButtonClick}></div>
-        <div className="social-net social-net-icon" onClick={handleSocialNetButtonClick}></div>
+        <div className="reddit social-net-icon" onClick={handleSocialNetButtonClick}></div>
         <div className="telegram social-net-icon" onClick={handleSocialNetButtonClick}></div>
       </div>
     </footer>

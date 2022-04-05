@@ -40,12 +40,12 @@ footer {
   background-image: url('./img/icon-twitter-hover.png');
 }
 
-.social-net {
-  background-image: url('./img/icon-social-net.png');
+.reddit {
+  background-image: url('./img/icon-reddit.png');
 }
 
-.social-net:hover {
-  background-image: url('./img/icon-social-net-hover.png');
+.reddit:hover {
+  background-image: url('./img/icon-reddit-hover.png');
 }
 
 .telegram {
@@ -56,7 +56,7 @@ footer {
   background-image: url('./img/icon-telegram-hover.png');
 }
 
-@media (max-width: 770px) {
+@media (max-width: 900px) {
   footer {
     height: auto;
     padding: 12px 24px 18.5px 24px;
