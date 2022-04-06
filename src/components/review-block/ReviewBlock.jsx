@@ -1,9 +1,20 @@
 import { useState } from 'react';
 import ReviewsList from '../reviews-list/ReviewsList';
+import ProgressBar from '../progress-bar/ProgressBar';
 import './review-block.css';
 import getReviews from '../../sources/reviews';
 
 const defaultPaginationIndex = 0;
+
+const getActiveBar = (isItTheBegining, isItTheEnd) => {
+  if (isItTheBegining) {
+    return 0;
+  }
+  if (isItTheEnd ) {
+    return 2;
+  }
+  return 1;
+};
 
 const getArrowClassName = (direction, shouldBeActive) => {
   const activeOption = shouldBeActive ? 'active' : 'not-active';
@@ -49,6 +60,7 @@ function ReviewBlock({screen}) {
   };
 
   const aviailableReviews = getAvailableReviews(setPaginationIndex, reviews, paginationIndex, screen);
+  const activeBar = getActiveBar(isPaginationIndexInTheBeginig, isPaginationIndexInTheEnd);
 
   const leftArrowClass = getArrowClassName('left', !isPaginationIndexInTheBeginig);
   const rightArrowClass = getArrowClassName('right', !isPaginationIndexInTheEnd);
@@ -64,6 +76,7 @@ function ReviewBlock({screen}) {
           </button>
         </div>
         <ReviewsList reviews={aviailableReviews} />
+        <ProgressBar activeBar={activeBar} />
       </div>
       <button type="button" value="left" className={leftArrowClass} onClick={handleArrowClick}></button>
       <button type="button" value="right" className={rightArrowClass} onClick={handleArrowClick}></button>
