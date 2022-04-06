@@ -1,0 +1,44 @@
+.review-card {
+  width: 471px;
+  padding: 24px;
+  background-color: #F5F5F5;
+}
+
+.review-card span {
+  font-family: 'Factor A';
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -1.24%;
+  color: #333333;
+  margin-right: 5px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.review-card-avatar_img {
+  width: 52px;
+  height: 52px;
+  margin-right: 20px;
+}
+
+.review-card-date {
+  font-family: 'Factor A';
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #8A8A8A;
+  margin-left: auto;
+  align-self: flex-start;
+}
+
+.review-card-text {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #333333;
+}

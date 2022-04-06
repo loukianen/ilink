@@ -1,0 +1,4 @@
+.review-block_reviews {
+  display: flex;
+  justify-content: space-between;
+}

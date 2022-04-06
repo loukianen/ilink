@@ -14,6 +14,7 @@ code {
 
 button {
   border: none;
+  border-radius: 2px;
   background-color: #585CC6;
   color: #FFFFFF;
 }

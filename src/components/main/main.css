@@ -16,6 +16,7 @@
 .main-info_photo {
   width: 519px;
   height: 383px;
+  border-radius: 2px;
 }
 
 @media (max-width: 900px) {
@@ -27,6 +28,8 @@
 
   .main-info {
     margin: 64px 0 0 16px;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .main-info_photo {

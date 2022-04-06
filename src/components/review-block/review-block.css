@@ -1,0 +1,106 @@
+.review-block {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 120px 80px 0 0;
+}
+
+.review-block_content-wrapper {
+  width: 1062px;
+  height: 389px;
+  background-color: #FFFFFF;
+  padding: 56px 56px 32px 80px;
+  margin-right: 18px;
+}
+
+.review-block_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-block_header__header {
+  flex-grow: 1;
+  font-family: 'Factor A';
+  font-size: 68px;
+  font-weight: 500;
+  line-height: 88px;
+  letter-spacing: -1.24%;
+  color: #333333;
+}
+
+.review-block_header-add-review-button {
+  display: flex;
+  align-items: center;
+  padding: 17px 28px;
+}
+
+.review-block_header-add-review-button img {
+  margin-right: 11.7px;
+}
+
+.turn-carusel-button {
+  width: 56px;
+  height: 56px;
+}
+
+.turn-carusel-button.right.not-active {
+  background-image: url('./img/carusel-arrow_left.png');
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.turn-carusel-button.right.active {
+  background-image: url('./img/active-carusel-arrow_right.png');
+}
+
+.turn-carusel-button.left.active {
+  background-image: url('./img/active-carusel-arrow_right.png');
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.turn-carusel-button.left.not-active {
+  background-image: url('./img/carusel-arrow_left.png');
+}
+
+@media (max-width: 900px) {
+  .review-block {
+    margin: 74px 16px 0 0;
+  }
+
+  .review-block_content-wrapper {
+    width: 100vw;
+    height: auto;
+    padding: 20px 16px 24px 16px;
+  }
+
+  .review-block_header__header {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  
+  .review-block_header-add-review-button {
+    display: flex;
+    align-items: center;
+    padding: 13.85px;
+  }
+  
+  .review-block_header-add-review-button img {
+    margin-right: 0;
+  }
+
+  .review-block_header-add-review-button-label {
+    display: none;
+  }
+
+  .turn-carusel-button {
+    display: none;
+  }
+}
