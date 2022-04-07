@@ -44,7 +44,15 @@ function ReviewBlock({screen}) {
   const [paginationIndex, setPaginationIndex] = useState(defaultPaginationIndex);
 
   const isPaginationIndexInTheBeginig = paginationIndex === 0 || paginationIndex === undefined;
-  const isPaginationIndexInTheEnd = paginationIndex === undefined || paginationIndex >= reviews.length - 2;
+  const isPaginationIndexInTheEnd = paginationIndex === undefined || paginationIndex >= reviews.length - 1;
+
+  const changePaginationIndex = (direction) => {
+    const diff = direction === 'right' ? 1 : -1;
+    const newIndex = paginationIndex + diff;
+    if (newIndex >= 0 && newIndex <= reviews.length - 1) {
+      setPaginationIndex(newIndex);
+    }
+  };
 
   const handleAddReviewButtonClick = () => {
     alert('Здесь будет добавление отзыва');
@@ -52,11 +60,7 @@ function ReviewBlock({screen}) {
 
   const handleArrowClick = (evt) => {
     const direction = evt.target.value;
-    const diff = direction === 'right' ? 1 : -1;
-    const newIndex = paginationIndex + diff;
-    if (newIndex >= 0 && newIndex <= reviews.length - 1) {
-      setPaginationIndex(newIndex);
-    }
+    changePaginationIndex(direction);
   };
 
   const aviailableReviews = getAvailableReviews(setPaginationIndex, reviews, paginationIndex, screen);
@@ -75,7 +79,7 @@ function ReviewBlock({screen}) {
             <span className="review-block_header-add-review-button-label">Добавить отзыв</span>
           </button>
         </div>
-        <ReviewsList reviews={aviailableReviews} />
+        <ReviewsList reviews={aviailableReviews} onSwipe={changePaginationIndex}/>
         <ProgressBar activeBar={activeBar} />
       </div>
       <button type="button" value="left" className={leftArrowClass} onClick={handleArrowClick}></button>
