@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 38px;
 }
 
 .review-block_header__header {
@@ -72,11 +73,11 @@
 
 @media (max-width: 900px) {
   .review-block {
-    margin: 74px 16px 0 0;
+    margin: 57px 0 0 0;
   }
 
   .review-block_content-wrapper {
-    width: 100vw;
+    width: auto;
     height: auto;
     padding: 20px 16px 24px 16px;
   }
