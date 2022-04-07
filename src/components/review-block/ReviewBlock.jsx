@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ReviewsList from '../reviews-list/ReviewsList';
 import ProgressBar from '../progress-bar/ProgressBar';
+import { PopUpContext } from '../../hocs/pop-up-window-provider/PopUpWindowProvider';
 import './review-block.css';
 import getReviews from '../../sources/reviews';
 
@@ -42,6 +43,7 @@ const getAvailableReviews = (resetIndex, data = [], index = defaultPaginationInd
 function ReviewBlock({screen}) {
   const reviews = getReviews().sort((a, b) => b.date.getTime() - a.date.getTime());
   const [paginationIndex, setPaginationIndex] = useState(defaultPaginationIndex);
+  const { onShow } = useContext(PopUpContext);
 
   const isPaginationIndexInTheBeginig = paginationIndex === 0 || paginationIndex === undefined;
   const isPaginationIndexInTheEnd = paginationIndex === undefined || paginationIndex >= reviews.length - 1;
@@ -55,7 +57,7 @@ function ReviewBlock({screen}) {
   };
 
   const handleAddReviewButtonClick = () => {
-    alert('Здесь будет добавление отзыва');
+    onShow('Hi there!');
   };
 
   const handleArrowClick = (evt) => {
@@ -70,21 +72,23 @@ function ReviewBlock({screen}) {
   const rightArrowClass = getArrowClassName('right', !isPaginationIndexInTheEnd);
 
   return (
-    <section className="review-block">
-      <div className="review-block_content-wrapper">
-        <div className="review-block_header">
-          <div className="review-block_header__header">Отзывы</div>
-          <button type="button" className="review-block_header-add-review-button button" onClick={handleAddReviewButtonClick}>
-            <img src="img/white-plus.png" width="14.3" height="14.3" alt="Плюс" />
-            <span className="review-block_header-add-review-button-label">Добавить отзыв</span>
-          </button>
+    <>
+      <section className="review-block">
+        <div className="review-block_content-wrapper">
+          <div className="review-block_header">
+            <div className="review-block_header__header">Отзывы</div>
+            <button type="button" className="review-block_header-add-review-button button" onClick={handleAddReviewButtonClick}>
+              <img src="img/white-plus.png" width="14.3" height="14.3" alt="Плюс" />
+              <span className="review-block_header-add-review-button-label">Добавить отзыв</span>
+            </button>
+          </div>
+          <ReviewsList reviews={aviailableReviews} onSwipe={changePaginationIndex}/>
+          <ProgressBar activeBar={activeBar} />
         </div>
-        <ReviewsList reviews={aviailableReviews} onSwipe={changePaginationIndex}/>
-        <ProgressBar activeBar={activeBar} />
-      </div>
-      <button type="button" value="left" className={leftArrowClass} onClick={handleArrowClick}></button>
-      <button type="button" value="right" className={rightArrowClass} onClick={handleArrowClick}></button>
-    </section>
+        <button type="button" value="left" className={leftArrowClass} onClick={handleArrowClick}></button>
+        <button type="button" value="right" className={rightArrowClass} onClick={handleArrowClick}></button>
+      </section>
+    </>
   );
 }
 

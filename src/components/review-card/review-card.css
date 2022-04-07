@@ -2,6 +2,7 @@
   width: 471px;
   padding: 24px;
   background-color: #F5F5F5;
+  border-radius: 2px;
 }
 
 .review-card span {
@@ -24,6 +25,7 @@
   width: 52px;
   height: 52px;
   margin-right: 20px;
+  border-radius: 2px;
 }
 
 .review-card-date {

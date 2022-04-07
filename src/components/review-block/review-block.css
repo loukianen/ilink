@@ -104,4 +104,9 @@
   .turn-carusel-button {
     display: none;
   }
+
+  .review-form-wrapper {
+    width: 100vw;
+    height: 100vh;
+  }
 }

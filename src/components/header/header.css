@@ -2,6 +2,7 @@ header {
   position: relative;
   height: 52px;
   background-color: #FFFFFF;
+  color: #333333;
   padding: 32px 80px;
   display: flex;
   justify-content: space-between;
@@ -30,10 +31,13 @@ header {
   border-radius: 2px;
 }
 
+.static-elements-wrapper{
+  width: calc(1440px / 2 - 80px + (85.43px / 2));
+  display: flex;
+  justify-content: space-between;
+}
+
 .logo {
-  position: absolute;
-  right: calc(50vw - 85.43px / 2);
-  top: 32px;
   height: 52px;
   display: flex;
   flex-direction: column;
@@ -82,11 +86,14 @@ header {
     height: 36px;
     width: 36px;
   }
+
+  .static-elements-wrapper{
+    width: calc(50vw - 16px + (59.14px / 2));
+    display: flex;
+    justify-content: space-between;
+  }
   
   .logo {
-    position: absolute;
-    right: calc(50vw - 59.14px / 2);
-    top: 20px;
     height: 36px;
   }
   
