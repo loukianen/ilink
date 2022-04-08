@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import ReviewsList from '../reviews-list/ReviewsList';
 import ProgressBar from '../progress-bar/ProgressBar';
+import ReviewForm from '../review-form/ReviewForm';
 import { PopUpContext } from '../../hocs/pop-up-window-provider/PopUpWindowProvider';
 import './review-block.css';
 import getReviews from '../../sources/reviews';
@@ -43,7 +44,7 @@ const getAvailableReviews = (resetIndex, data = [], index = defaultPaginationInd
 function ReviewBlock({screen}) {
   const reviews = getReviews().sort((a, b) => b.date.getTime() - a.date.getTime());
   const [paginationIndex, setPaginationIndex] = useState(defaultPaginationIndex);
-  const { onShow } = useContext(PopUpContext);
+  const { onShow, onClose } = useContext(PopUpContext);
 
   const isPaginationIndexInTheBeginig = paginationIndex === 0 || paginationIndex === undefined;
   const isPaginationIndexInTheEnd = paginationIndex === undefined || paginationIndex >= reviews.length - 1;
@@ -57,7 +58,9 @@ function ReviewBlock({screen}) {
   };
 
   const handleAddReviewButtonClick = () => {
-    onShow('Hi there!');
+    const component = ReviewForm;
+    const componentProps = { onClose };
+    onShow(component, componentProps);
   };
 
   const handleArrowClick = (evt) => {

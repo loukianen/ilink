@@ -39,10 +39,16 @@ const PopUpWindowProvider = (props) => {
     setDisplay('none');
   }
 
+  const handleBackgroundClick = (evt) => {
+    if (display !== 'none') {
+      evt.stopPropagation();
+    }
+  };
+
   const {component, componentProps} = componentData;
   return (
     <PopUpContext.Provider value={{onShow: renderImportedComponent, onClose: resetOptions}}>
-      <div style={{filter: `blur(${currrentBlurValue})`}}>
+      <div style={{filter: `blur(${currrentBlurValue})`}} onClickCapture={handleBackgroundClick}>
         {props.children}
       </div>
       <div style={{...windowStyle, display }}>{component(componentProps)}</div>
