@@ -1,8 +1,11 @@
 import './header.css';
+import { useContext } from 'react';
+import { PopUpContext } from '../../hocs/pop-up-window-provider/PopUpWindowProvider';
 
 function Header() {
+  const { onShow } = useContext(PopUpContext);
   const handleControlPanelButtonClick = () => {
-    alert('Здесь будет панель управления');
+    onShow('Здесь будет панель управления');
   };
 
   return (

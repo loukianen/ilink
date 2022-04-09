@@ -1,10 +1,13 @@
 import './footer.css';
+import { useContext } from 'react';
+import { PopUpContext } from '../../hocs/pop-up-window-provider/PopUpWindowProvider';
 
 function Footer() {
+  const { onShow } = useContext(PopUpContext);
   const handleSocialNetButtonClick = (evt) => {
     const elementClasses = evt.target.getAttribute('class');
     const sourceName = elementClasses.split(' ')[0];
-    alert(`Здесь можно будет поделиться информацией в ${sourceName}`);
+    onShow(`Здесь можно будет поделиться информацией в ${sourceName}`);
   };
 
   return (

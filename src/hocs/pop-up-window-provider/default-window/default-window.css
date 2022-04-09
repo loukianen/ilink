@@ -1,7 +1,6 @@
 .pop-up-window {
   position: relative;
-  top: -100px;
-  left: -170px;
+  left: calc(50vw - 170px);
   width: 300px;
   display: flex;
   flex-direction: column;
