@@ -10,7 +10,7 @@ function ReviewForm(props) {
   const [userName, setUserName] = useState('');
   const [reviewText, setReviewText] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
-  const [isFormLocked, setIsFormLocked] = useState(false);
+  // const [isFormLocked, setIsFormLocked] = useState(false);
   const handleInfoButtonClick = () => {
     alert('Здесь будет ссылка на дополнительную информацию');
   };
@@ -29,8 +29,10 @@ function ReviewForm(props) {
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
     alert(`user name: ${userName}\n review text: ${reviewText}`);
-    setUserName('');
-    setReviewText('');
+    if (isFormValid) {
+      setUserName('');
+      setReviewText('');
+    }
   };
 
   const handleUserNameChange = ({ target }) => {
