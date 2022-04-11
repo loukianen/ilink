@@ -1,0 +1,119 @@
+.message-wrapper {
+  position: relative;
+  top: -61px;
+  left: 952px;
+  height: 93px;
+  width: 284px;
+  background-size: cover;
+  border-radius: 32px;
+  padding: 16px 23.46px 24px 130px;
+}
+
+.message-wrapper button {
+  background-color: transparent;
+}
+
+.message-wrapper.success {
+  background-image: url('./img/message-background__green.png');
+}
+
+.message-wrapper.fail {
+  background-image: url('./img/message-background__red.png');
+}
+
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-header span {
+  font-family: 'Factor A';
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38.4px;
+  letter-spacing: -3.5%;
+}
+
+.message-close-button__header {
+  height: 25.08px;
+  width: 25.08px;
+  background-size: contain;
+}
+
+.message-close-button__header.success {
+  background-image: url('./img/close-cross-button__grey.png');
+}
+
+.message-close-button__header.fail {
+  background-image: url('./img/close-cross-button__white.png');
+}
+
+.message p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin-right: 60px;
+}
+
+.message-close-button__art {
+  position: relative;
+  top: -150px;
+  left: -100px;
+  height: 78px;
+  width: 78px;
+  background-size: contain;
+}
+
+.message-close-button__art.success {
+  background-image: url('./img/close-round-button-background__green.png');
+}
+
+.message-close-button__art.fail {
+  background-image: url('./img/close-round-button-background__red.png');
+}
+
+@media (max-width: 900px) {
+  .message-wrapper {
+    position: relative;
+    top: -661px;
+    left: 16px;
+    height: 75px;
+    width: calc(100% - 50px - 78px - 16px);
+    background-size: cover;
+    padding: 25px 22px 32px 90px;
+  }
+
+  .message-wrapper.success {
+    background-image: url('./img/message-background_mobile__green.png');
+  }
+
+  .message-wrapper.fail {
+    background-image: url('./img/message-background_mobile__red.png');
+  }
+
+  .message-header span {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .message p {
+    margin-right: 0px;
+  }
+
+  .message-close-button__art {
+    top: -160px;
+    left: -62px;
+    height: 64px;
+    width: 64px;
+  }
+  
+  .message-close-button__art.success {
+    background-image: url('./img/close-round-button-background_mobile__green.png');
+  }
+  
+  .message-close-button__art.fail {
+    background-image: url('./img/close-round-button-background_mobile__red.png');
+  }
+}

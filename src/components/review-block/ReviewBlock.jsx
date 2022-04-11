@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import ReviewsList from '../reviews-list/ReviewsList';
 import ProgressBar from '../progress-bar/ProgressBar';
 import ReviewForm from '../review-form/ReviewForm';
+import Message from '../message/Message';
 import { PopUpContext } from '../../hocs/pop-up-window-provider/PopUpWindowProvider';
 import './review-block.css';
 import getReviews from '../../sources/reviews';
@@ -44,6 +45,7 @@ const getAvailableReviews = (resetIndex, data = [], index = defaultPaginationInd
 function ReviewBlock({screen}) {
   const reviews = getReviews().sort((a, b) => b.date.getTime() - a.date.getTime());
   const [paginationIndex, setPaginationIndex] = useState(defaultPaginationIndex);
+  const [messageState, setMessageState] = useState('open');
   const { onShow, onClose } = useContext(PopUpContext);
 
   const isPaginationIndexInTheBeginig = paginationIndex === 0 || paginationIndex === undefined;
@@ -56,6 +58,8 @@ function ReviewBlock({screen}) {
       setPaginationIndex(newIndex);
     }
   };
+
+  const closeMessage = () => setMessageState('closed');
 
   const handleAddReviewButtonClick = () => {
     const component = ReviewForm;
@@ -91,6 +95,7 @@ function ReviewBlock({screen}) {
         <button type="button" value="left" className={leftArrowClass} onClick={handleArrowClick}></button>
         <button type="button" value="right" className={rightArrowClass} onClick={handleArrowClick}></button>
       </section>
+      {messageState === 'open' && <Message type="success" onCloseMessage={closeMessage} />}
     </>
   );
 }
