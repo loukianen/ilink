@@ -1,49 +1,59 @@
 import './review-form.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const MIN_REVIEW_TEXT = 50;
 const MAX_REVIEW_TEXT = 200;
 
 
 function ReviewForm(props) {
-  const { onClose } = props;
+  const { onClose, onReturnSubmitResult } = props;
   const [userName, setUserName] = useState('');
   const [reviewText, setReviewText] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
-  // const [isFormLocked, setIsFormLocked] = useState(false);
   const handleInfoButtonClick = () => {
     alert('Здесь будет ссылка на дополнительную информацию');
   };
 
-  const validateForm = () => {
-    const [name, surname] = userName.split(' ');
-    const validationResult = name.length > 0 && surname.length > 0 && reviewText.length >= MIN_REVIEW_TEXT;
-    setIsFormValid(validationResult);
-  };
-
   const handleReviewTextChange = ({ target }) => {
     setReviewText(target.value);
-    validateForm();
   };
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
-    alert(`user name: ${userName}\n review text: ${reviewText}`);
-    if (isFormValid) {
+    alert(`user name: ${userName}\nreview text: ${reviewText}\n`);
+    try {
       setUserName('');
       setReviewText('');
+      if (isFormValid) {
+        onReturnSubmitResult('success');
+      } else {
+        throw new Error('Form is invalid');
+      }
+      onClose();
+    } catch(e) {
+      onReturnSubmitResult('fail');
+      onClose();
     }
   };
 
   const handleUserNameChange = ({ target }) => {
     setUserName(target.value);
-    validateForm();
   };
+
+  useEffect(() => {
+    const [name, surname] = userName.split(' ');
+    if (name && surname) {
+      const validationResult = name.length > 0 && surname.length > 0 && reviewText.length >= MIN_REVIEW_TEXT;
+      setIsFormValid(validationResult);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [userName, reviewText]);
 
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   return (
-    <form className="review-form" style={{top: `calc(${scrollTop}px + 30vh)`}} onSubmit={handleFormSubmit}>
+    <form className="review-form" style={{top: `calc(${scrollTop}px + 20vh)`}} onSubmit={handleFormSubmit}>
       <div className="review-form_header">
         <span>Отзыв</span>
         <button type="button" className="review-form_close-button" onClick={onClose}></button>

@@ -45,7 +45,8 @@ const getAvailableReviews = (resetIndex, data = [], index = defaultPaginationInd
 function ReviewBlock({screen}) {
   const reviews = getReviews().sort((a, b) => b.date.getTime() - a.date.getTime());
   const [paginationIndex, setPaginationIndex] = useState(defaultPaginationIndex);
-  const [messageState, setMessageState] = useState('open');
+  const [messageState, setMessageState] = useState('closed');
+  const [messageType, setMessageType] = useState('succcess');
   const { onShow, onClose } = useContext(PopUpContext);
 
   const isPaginationIndexInTheBeginig = paginationIndex === 0 || paginationIndex === undefined;
@@ -59,11 +60,16 @@ function ReviewBlock({screen}) {
     }
   };
 
+  const showSubmitResult = (submitResult) => {
+    setMessageType(submitResult);
+    setMessageState('open');
+  };
+
   const closeMessage = () => setMessageState('closed');
 
   const handleAddReviewButtonClick = () => {
     const component = ReviewForm;
-    const componentProps = { onClose };
+    const componentProps = { onClose, onReturnSubmitResult: showSubmitResult };
     onShow(component, componentProps);
   };
 
@@ -95,7 +101,7 @@ function ReviewBlock({screen}) {
         <button type="button" value="left" className={leftArrowClass} onClick={handleArrowClick}></button>
         <button type="button" value="right" className={rightArrowClass} onClick={handleArrowClick}></button>
       </section>
-      {messageState === 'open' && <Message type="success" onCloseMessage={closeMessage} />}
+      {messageState === 'open' && <Message type={messageType} onCloseMessage={closeMessage} />}
     </>
   );
 }

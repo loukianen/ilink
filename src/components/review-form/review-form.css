@@ -155,7 +155,7 @@
   .review-form {
     position: relative;
     top: -50px;
-    left: calc(16px - 50vw);
+    left: 16px;
     width: calc(100vw - 32px - 32px);
     padding: 16px;
   }
