@@ -1,5 +1,6 @@
 import './review-form.css';
 import { useEffect, useState } from 'react';
+import FileLoading from '../file-loading/FileLoading';
 
 const MIN_REVIEW_TEXT = 50;
 const MAX_REVIEW_TEXT = 200;
@@ -61,11 +62,13 @@ function ReviewForm(props) {
       <label htmlFor="author-name" className="review-form_author-label">Как вас зовут?</label>
       <div className="review-form_authore-info">
         <input className="review-form_authore-input" type="text" name="author-name" id="author-name" placeholder="Имя Фамилия" title="Поле должно содержать имя и фамилию" required value={userName} onChange={handleUserNameChange} />
-        <button type="button" className="review-form_load-photo-button">
+        <input type="file" name="file" id="choosing-file" className="review-form_input-file-field" accept=".jpg, .jpeg, .png" hidden/>
+        <label htmlFor="choosing-file" className="review-form_load-photo-button button">
           <img src="img/white-plus.png" alt="Плюс" />
           <span className="review-form_load-photo-button-label">Загрузить фото</span>
-        </button>
+        </label>
       </div>
+      <FileLoading />
       <label htmlFor="author-text" className="review-form_text-label">Все ли вам понравилось?</label>
       <div className="review-form_review-text-wrapper">
         <textarea className="review-form_review-text" id="author-text" placeholder="Напишите пару слов о вашем опыте..." maxLength={MAX_REVIEW_TEXT} required value={reviewText} onChange={handleReviewTextChange}></textarea>

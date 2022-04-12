@@ -62,11 +62,18 @@
   font-weight: 400;
 }
 
-.review-form_load-photo-button {
+.review-form .review-form_load-photo-button {
   display: flex;
   align-items: center;
   padding: 17px 28px;
   margin-left: 16px;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 1%;
+  background-color: #585CC6;
+  color: #FFFFFF;
 }
 
 .review-form_load-photo-button img {
@@ -80,6 +87,10 @@
   line-height: 18px;
   font-weight: 600;
   letter-spacing: 1%;
+}
+
+.review-form_text-label {
+  margin-top: 32px;
 }
 
 .review-form_review-text-wrapper {
@@ -182,7 +193,6 @@
   .review-form_authore-info {
     display: block;
     margin-top: 8px;
-    margin-bottom: 24px;
   }
 
   .review-form_authore-input {
@@ -190,9 +200,9 @@
     width: calc(100% - 24px);
   }
 
-  .review-form_load-photo-button {
+  .review-form .review-form_load-photo-button {
     display: flex;
-    align-items: center;
+    justify-content: center;
     padding: 12px;
     margin-top: 12px;
     margin-left: 0;
