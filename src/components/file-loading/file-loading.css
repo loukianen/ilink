@@ -28,6 +28,11 @@
   line-height: 18.2px;
   font-weight: 600;
   align-self: flex-start;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
 }
 
 .file-loading_file-info.warning {
@@ -93,6 +98,10 @@
 @media (max-width: 900px) {
   .file-loading_input-wrapper {
     width: 100%;
+  }
+
+  .file-loading_file-info {
+    max-width: calc(100% - 28 - 20);
   }
 
   .file-loading_pail {

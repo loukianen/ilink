@@ -45,7 +45,7 @@ function FileLoading(props) {
     <div className="file-loading_input-wrapper">
       <img className="file-loading_jpg-icon" src="img/jpg-icon.png" alt="jpg-icon" />
       <div className="file-loading_info-wrapper">
-        <div className={`file-loading_file-info${fileInfoClass}`}>{fileInfo}</div>
+        <div className={`file-loading_file-info${fileInfoClass}`} title={fileInfo}>{fileInfo}</div>
         <progress className={`file-loading_progress-bar${progressBarClass}`} id="file-loading_progress-bar" value="0" max={MAX_PROGRESS}></progress>
       </div>
       <img src="img/spiner-icon.png" alt="spiner" className={`file-loading_spiner${spinerVisibilityClass}`} />
