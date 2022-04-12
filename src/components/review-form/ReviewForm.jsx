@@ -11,6 +11,7 @@ function ReviewForm(props) {
   const [userName, setUserName] = useState('');
   const [reviewText, setReviewText] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+
   const handleInfoButtonClick = () => {
     alert('Здесь будет ссылка на дополнительную информацию');
   };
@@ -35,6 +36,16 @@ function ReviewForm(props) {
       onReturnSubmitResult('fail');
       onClose();
     }
+  };
+
+  const handleInputBlur = () => {
+    const inputLabelElement = document.getElementById('choosing-file-label');
+    inputLabelElement.classList.remove('focus');
+  };
+  
+  const handleInputFocus = () => {
+    const inputLabelElement = document.getElementById('choosing-file-label');
+    inputLabelElement.classList.add('focus');
   };
 
   const handleUserNameChange = ({ target }) => {
@@ -62,8 +73,8 @@ function ReviewForm(props) {
       <label htmlFor="author-name" className="review-form_author-label">Как вас зовут?</label>
       <div className="review-form_authore-info">
         <input className="review-form_authore-input" type="text" name="author-name" id="author-name" placeholder="Имя Фамилия" title="Поле должно содержать имя и фамилию" required value={userName} onChange={handleUserNameChange} />
-        <input type="file" name="file" id="choosing-file" className="review-form_input-file-field" accept=".jpg, .jpeg" hidden/>
-        <label htmlFor="choosing-file" className="review-form_load-photo-button button">
+        <input type="file" name="file" id="choosing-file" className="review-form_input-file-field" accept=".jpg, .jpeg" onFocus={handleInputFocus} onBlur={handleInputBlur} />
+        <label htmlFor="choosing-file" id="choosing-file-label" className="review-form_load-photo-button button">
           <img src="img/white-plus.png" alt="Плюс" />
           <span className="review-form_load-photo-button-label">Загрузить фото</span>
         </label>
