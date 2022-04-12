@@ -19,6 +19,7 @@
   justify-content: space-around;
   align-items: center;
   flex-grow: 1;
+  margin: 14px 0;
 }
 
 .file-loading_file-name {
@@ -30,21 +31,21 @@
 
 .file-loading_progress-bar {
   width: 100%;
-  display: flex;
-}
-
-.file-loading_progress-bar__loaded {
-  width: 60%;
-  background-color: #585CC6;
-  border: 4px solid #585CC6;
+  height: 4px;
+  background-color: #C2C4FF;
   border-radius: 4px;
 }
-
-.file-loading_progress-bar__rest {
-  flex-grow: 1;
+.file-loading_progress-bar::-webkit-progress-bar {
   background-color: #C2C4FF;
-  border: 4px solid #C2C4FF;
-  border-radius: 0 4px 4px 0;
+  border-radius: 4px;
+}
+.file-loading_progress-bar::-webkit-progress-value {
+  background-color: #585CC6;
+  border-radius: 4px;
+}
+.file-loading_progress-bar::-moz-progress-bar {
+  background-color: #585CC6;
+  border-radius: 4px;
 }
 
 .file-loading_spiner {

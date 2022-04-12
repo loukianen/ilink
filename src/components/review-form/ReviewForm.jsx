@@ -62,7 +62,7 @@ function ReviewForm(props) {
       <label htmlFor="author-name" className="review-form_author-label">Как вас зовут?</label>
       <div className="review-form_authore-info">
         <input className="review-form_authore-input" type="text" name="author-name" id="author-name" placeholder="Имя Фамилия" title="Поле должно содержать имя и фамилию" required value={userName} onChange={handleUserNameChange} />
-        <input type="file" name="file" id="choosing-file" className="review-form_input-file-field" accept=".jpg, .jpeg, .png" hidden/>
+        <input type="file" name="file" id="choosing-file" className="review-form_input-file-field" accept=".jpg, .jpeg" hidden/>
         <label htmlFor="choosing-file" className="review-form_load-photo-button button">
           <img src="img/white-plus.png" alt="Плюс" />
           <span className="review-form_load-photo-button-label">Загрузить фото</span>
