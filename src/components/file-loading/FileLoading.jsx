@@ -49,7 +49,7 @@ function FileLoading(props) {
         <progress className={`file-loading_progress-bar${progressBarClass}`} id="file-loading_progress-bar" value="0" max={MAX_PROGRESS}></progress>
       </div>
       <img src="img/spiner-icon.png" alt="spiner" className={`file-loading_spiner${spinerVisibilityClass}`} />
-      <div className={`file-loading_pail${pailVisibilityClass}`} onClick={handlePailClick}></div>
+      <button className={`file-loading_pail${pailVisibilityClass}`} onClick={handlePailClick}></button>
     </div>
   );
 }

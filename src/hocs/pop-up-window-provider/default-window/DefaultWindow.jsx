@@ -10,7 +10,7 @@ function DefaultWindow(props) {
       <div className="pop-up-window_text">
         {text}
       </div>
-      <button className="pop-up-window_button" type="button" onClick={onClose}>Close</button>
+      <button className="pop-up-window_button button" type="button" onClick={onClose}>Close</button>
     </div>
   );
 }

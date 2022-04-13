@@ -85,6 +85,10 @@
   color: #FFFFFF;
 }
 
+.review-form .review-form_load-photo-button:hover {
+  background-color: #797DDF;
+}
+
 .review-form_load-photo-button.focus {
   outline: 1px solid #0078d7;
   outline: -webkit-focus-ring-color auto 5px;

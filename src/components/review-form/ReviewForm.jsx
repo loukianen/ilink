@@ -121,7 +121,7 @@ function ReviewForm(props) {
         <div className="review-form_chares-counter">{reviewText.length}/{MAX_REVIEW_TEXT}</div>
       </div>
       <div className="review-form_footer">
-        <button type="submit" className="review-form_submit-button">Отправить отзыв</button>
+        <button type="submit" className="review-form_submit-button button">Отправить отзыв</button>
         <div className="review-form_footer-warning">
           <button type="button" className="review-form_info-button" width="15.42" height="15.42" onClick={handleInfoButtonClick}></button>
           <span className="review-form_warning-text">Все отзывы проходят модерацию в течение 2 часов</span>

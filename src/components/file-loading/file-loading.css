@@ -85,6 +85,7 @@
   margin: 18px 12px 18px 16px;
   background-image: url('./img/pail-icon.png');
   background-position: center center;
+  background-color: transparent;
 }
 
 .file-loading_pail:hover {
