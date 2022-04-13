@@ -26,6 +26,7 @@ footer {
   height: 19.5px;
   border-radius: 9.25;
   background-position: center center;
+  background-color: transparent;
 }
 
 .social-net-icon:nth-child(n + 2) {

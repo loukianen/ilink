@@ -16,9 +16,9 @@ function Footer() {
         &copy;iLINK ACADEMY. ALL RIGHTS RESERVED. 2022
       </div>
       <div className="social-net-icons">
-        <div className="twitter social-net-icon" onClick={handleSocialNetButtonClick}></div>
-        <div className="reddit social-net-icon" onClick={handleSocialNetButtonClick}></div>
-        <div className="telegram social-net-icon" onClick={handleSocialNetButtonClick}></div>
+        <button className="twitter social-net-icon" onClick={handleSocialNetButtonClick}></button>
+        <button className="reddit social-net-icon" onClick={handleSocialNetButtonClick}></button>
+        <button className="telegram social-net-icon" onClick={handleSocialNetButtonClick}></button>
       </div>
     </footer>
   );
