@@ -179,7 +179,7 @@
 @media (max-width: 900px) {
   .review-form {
     position: relative;
-    top: -50px;
+    top: -250px;
     left: 16px;
     width: calc(100vw - 32px - 32px);
     padding: 16px;

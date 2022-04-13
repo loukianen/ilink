@@ -25,6 +25,7 @@ function ReviewForm(props) {
   const validateFile = (files) => {
     const fileSize = files[0].size;
     if (fileSize > MAX_FILE_SIZE) {
+      setFiles([]);
       setFileLoadingState('failed');
     }
   };
