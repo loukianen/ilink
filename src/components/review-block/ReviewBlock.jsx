@@ -6,6 +6,7 @@ import Message from '../message/Message';
 import { PopUpContext } from '../../hocs/pop-up-window-provider/PopUpWindowProvider';
 import './review-block.css';
 import getReviews from '../../sources/reviews';
+import { readIndex, saveIndex } from '../../paginationStorage';
 
 const defaultPaginationIndex = 0;
 
@@ -44,7 +45,7 @@ const getAvailableReviews = (resetIndex, data = [], index = defaultPaginationInd
 
 function ReviewBlock({screen}) {
   const reviews = getReviews().sort((a, b) => b.date.getTime() - a.date.getTime());
-  const [paginationIndex, setPaginationIndex] = useState(defaultPaginationIndex);
+  const [paginationIndex, setPaginationIndex] = useState(readIndex(defaultPaginationIndex));
   const [messageState, setMessageState] = useState('closed');
   const [messageType, setMessageType] = useState('succcess');
   const { onShow, onClose } = useContext(PopUpContext);
@@ -54,8 +55,11 @@ function ReviewBlock({screen}) {
 
   const changePaginationIndex = (direction) => {
     const diff = direction === 'right' ? 1 : -1;
+    console.log('diff ', diff);
     const newIndex = paginationIndex + diff;
     if (newIndex >= 0 && newIndex <= reviews.length - 1) {
+      console.log('New index before setting', newIndex);
+      saveIndex(newIndex);
       setPaginationIndex(newIndex);
     }
   };
@@ -75,6 +79,7 @@ function ReviewBlock({screen}) {
 
   const handleArrowClick = (evt) => {
     const direction = evt.target.value;
+    console.log('direction ', direction);
     changePaginationIndex(direction);
   };
 
