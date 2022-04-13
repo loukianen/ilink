@@ -39,18 +39,6 @@ header {
 
 .logo {
   height: 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.logo_ilink {
-  height: 32.19px;
-  width: 85.43px;
-}
-
-.logo_academy {
-  height: 12.38px;
   width: 85.43px;
 }
 
@@ -95,15 +83,6 @@ header {
   
   .logo {
     height: 36px;
-  }
-  
-  .logo_ilink {
-    height: 22.29px;
-    width: 59.14px;
-  }
-  
-  .logo_academy {
-    height: 8.57px;
     width: 59.14px;
   }
 

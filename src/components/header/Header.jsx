@@ -16,10 +16,7 @@ function Header() {
         <span className="last-name">Лукьяненок</span>
       </div>
       <div className="static-elements-wrapper">
-      <div className='logo'>
-        <img src="img/ilink-logo.png" className="logo_ilink" alt="logo" />
-        <img src="img/academy-logo.png" className="logo_academy" alt="logo" />
-      </div>
+      <a href="https://ilink.dev/" target="_blank" rel="noreferrer"><img src="img/logo.png" className='logo' alt="logo" /></a>
       <button type="button" className="header_menu-button button" onClick={handleControlPanelButtonClick}>Панель управления</button>
       <button type="button" className="header_menu-button__mobile button" onClick={handleControlPanelButtonClick}></button>
       </div>
