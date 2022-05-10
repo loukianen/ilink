@@ -41,6 +41,7 @@
   background-image: url('./img/purple-plus.png');
   background-size: contain;
   margin-left: auto;
+  transform: rotate(45deg);
 }
 
 .review-form_close-button:hover {
